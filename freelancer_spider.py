@@ -30,9 +30,8 @@ class FreelanceSpider(scrapy.Spider):
 
                 if self.min_price is None or int(price) >= int(self.min_price):
                     self.jobs.append([title.strip(), description.strip(), '$'+str(price)])
-    
-    # def all_jobs(self):
-    #     return self.jobs
+
+
 process = CrawlerProcess()
 process.crawl(FreelanceSpider)
 process.start()
